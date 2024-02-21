@@ -13,7 +13,7 @@ export default DynamicPage;
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps(context: GetServerSidePropsContext) {
-    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL ? `https://${process.env.NEXT_PUBLIC_API_URL}` : 'http://localhost:3000'
     const response = await fetch(baseUrl + '/api/admin/pages')
     const data = await response.json()
 
