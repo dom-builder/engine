@@ -1,5 +1,5 @@
 {
-  "default": {
+  "home": {
     "page": "home",
     "components": [
       {
@@ -11,8 +11,12 @@
               "label": "Home"
             },
             {
-              "link": "/about",
+              "link": "/page/about",
               "label": "Sobre"
+            },
+            {
+              "link": "/page/mango",
+              "label": "Mango"
             }
           ]
         }
@@ -27,11 +31,7 @@
       },
       {
         "name": "module-footer",
-        "props": {
-          "title": "Bem vindo ao Alekito engine",
-          "subtitle": "É o davi ?",
-          "cta": "Ir para sobre nós"
-        }
+        "props": {}
       }
     ]
   },
@@ -49,6 +49,10 @@
             {
               "link": "/about",
               "label": "Sobre"
+            },
+            {
+              "link": "/page/mango",
+              "label": "Mango"
             }
           ]
         }
@@ -124,6 +128,42 @@
           "subtitle": "É o davi ?",
           "cta": "Ir para sobre nós"
         }
+      }
+    ]
+  },
+  "mango": {
+    "page": "mango",
+    "components": [
+      {
+        "name": "module-header-search",
+        "props": {
+          "links": [
+            {
+              "link": "/",
+              "label": "Home"
+            },
+            {
+              "link": "/page/about",
+              "label": "Sobre"
+            },
+            {
+              "link": "/page/mango",
+              "label": "Mango"
+            }
+          ]
+        }
+      },
+      {
+        "name": "module-hero",
+        "props": {
+          "title": "Isso aqui é a mango joe page",
+          "subtitle": "Cadê o adriano ?",
+          "cta": "Ir para sobre nós"
+        }
+      },
+      {
+        "name": "module-footer",
+        "props": {}
       }
     ]
   }

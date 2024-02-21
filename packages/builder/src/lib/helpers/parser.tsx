@@ -1,5 +1,5 @@
 import { resolver } from './containers'
-import { Suspense } from 'react'
+import { Suspense, useId } from 'react'
 
 function builtinKey() {
   return Math.random().toString(36).substring(7)
@@ -8,7 +8,7 @@ function builtinKey() {
 export function parser(builderSchema: any, options: any = {
   children: false
 }) {
-  if (!Array.isArray(builderSchema['components'])) return null
+  if (!Array.isArray(builderSchema?.components)) return null
 
   const components = builderSchema['components'].map((node: any) => {
     return componentParser(node['name'], node['props'], {
@@ -35,7 +35,7 @@ function componentParser(componentName: string, props: any, options: any) {
   
   return (
     <Suspense>
-      <Component key={builtinKey()} {...props} />
+      <Component {...props} key={builtinKey()} />
     </Suspense>
   )
 }
