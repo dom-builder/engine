@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev:example": "nx run example:dev",
+    "build:example": "nx run example:build",
     "test": "nx test engine"
   },
   "private": true,
