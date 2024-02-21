@@ -1,0 +1,166 @@
+{
+    "home": {
+        "page": "home",
+        "components": [
+            {
+                "name": "module-header-search",
+                "props": {
+                    "links": [
+                        {
+                            "link": "/",
+                            "label": "Home"
+                        },
+                        {
+                            "link": "/page/mango",
+                            "label": "Mango"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "module-hero",
+                "props": {
+                    "title": "Bem vindo ao Alekito engine",
+                    "subtitle": "É o davi ?",
+                    "cta": "Ir para sobre nós"
+                }
+            },
+            {
+                "name": "module-footer",
+                "props": {}
+            }
+        ]
+    },
+    "about": {
+        "page": "about",
+        "components": [
+            {
+                "name": "module-header-search",
+                "props": {
+                    "links": [
+                        {
+                            "link": "/",
+                            "label": "Home"
+                        },
+                        {
+                            "link": "/about",
+                            "label": "Sobre"
+                        },
+                        {
+                            "link": "/page/mango",
+                            "label": "Mango"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "common-card",
+                "props": {
+                    "shadow": "sm",
+                    "padding": "md",
+                    "radius": "md",
+                    "withBorder": true,
+                    "mb": "lg"
+                },
+                "components": [
+                    {
+                        "name": "common-card-section",
+                        "props": {},
+                        "components": [
+                            {
+                                "name": "common-image",
+                                "props": {
+                                    "src": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png",
+                                    "height": 160,
+                                    "alt": "Norway"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "common-group",
+                        "props": {
+                            "justify": "space-between",
+                            "mt": "md",
+                            "mb": "xs"
+                        },
+                        "components": [
+                            {
+                                "name": "common-text",
+                                "props": {
+                                    "fw": 500,
+                                    "children": "Norway Fjord Adventures"
+                                }
+                            },
+                            {
+                                "name": "common-badge",
+                                "props": {
+                                    "children": "On Sale",
+                                    "color": "pink"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "common-text",
+                        "props": {
+                            "size": "sm",
+                            "c": "dimmed",
+                            "children": "With Fjord Tours you can explore more of the magical fjord landscapes with tours and activities on and around the fjords of Norway"
+                        }
+                    },
+                    {
+                        "name": "common-button",
+                        "props": {
+                            "children": "Book classic tour now"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "module-footer",
+                "props": {
+                    "title": "Bem vindo ao Alekito engine",
+                    "subtitle": "É o davi ?",
+                    "cta": "Ir para sobre nós"
+                }
+            }
+        ]
+    },
+    "mango": {
+        "page": "mango",
+        "components": [
+            {
+                "name": "module-header-search",
+                "props": {
+                    "links": [
+                        {
+                            "link": "/",
+                            "label": "Home"
+                        },
+                        {
+                            "link": "/page/about",
+                            "label": "Sobre"
+                        },
+                        {
+                            "link": "/page/mango",
+                            "label": "Mango"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "module-hero",
+                "props": {
+                    "title": "Isso aqui é a mango joe page",
+                    "subtitle": "Cadê o adriano ?",
+                    "cta": "Ir para sobre nós"
+                }
+            },
+            {
+                "name": "module-footer",
+                "props": {}
+            }
+        ]
+    }
+}

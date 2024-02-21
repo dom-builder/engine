@@ -23,7 +23,7 @@ export default function Hero({ title, subtitle, cta }: HeroProps) {
         </Text>
 
          <Link href='/page/about'>
-          <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
+          <Button size="xl" radius="xl" className={classes.control}>
             {cta}
           </Button>
         </Link>

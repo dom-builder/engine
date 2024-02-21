@@ -1,8 +1,7 @@
 import { PageBuilder } from '@dom-builder/builder';
-import schema from '../../../tests/mocks/builder_schema.json';
 import { GetServerSidePropsContext } from 'next';
 
-export function DynamicPage({ slug }: { slug: string }) {
+export function DynamicPage({ slug, schema }: { slug: string, schema: any }) {
     return (
         <PageBuilder builderSchema={schema} page={String(slug)} />
     );
@@ -14,16 +13,20 @@ export default DynamicPage;
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps(context: GetServerSidePropsContext) {
-    const hour_in_seconds = 3600
+    const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
+    const response = await fetch(baseUrl + '/api/admin/pages')
+    const data = await response.json()
 
     return {
       props: {
+        schema: data.schema,
+        theme: data.theme,
         slug: context?.params?.slug,
       },
       // Next.js will attempt to re-generate the page:
       // - When a request comes in
       // - At most once every 10 seconds
-      revalidate: hour_in_seconds, // In seconds
+      revalidate: 10, // In seconds
     }
   }
 

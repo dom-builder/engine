@@ -4,6 +4,7 @@ import './styles.css';
 import '../utils/registers'
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
+import baseTheme from '../utils/base_theme.json';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,7 +13,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to example!</title>
       </Head>
       <main className="app">
-        <MantineProvider>
+        <MantineProvider theme={pageProps?.theme ?? baseTheme}>
           <Component {...pageProps} />
         </MantineProvider>
       </main>
