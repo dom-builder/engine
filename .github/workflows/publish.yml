@@ -3,7 +3,7 @@ name: Publish Core on Beta
 on:
   push:
     branches:
-      - release/4.0.0
+      - main
 
 jobs:
   publish:
