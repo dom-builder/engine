@@ -26,9 +26,9 @@ export default async function handler(
       return res.status(400).json({ error: "Schema is required" });
     }
 
-    await kv.set(key, { schema, theme });
+    const result = await kv.set(key, { schema, theme });
 
-    return res.status(200).json({ schema, theme });
+    return res.status(200).json(result);
   }
 
   if (!storeNameQuery) {
@@ -38,8 +38,8 @@ export default async function handler(
   const layout = await kv.get(key);
 
   if (layout === null) {
-    kv.set("schema", baseSchema);
-    return res.status(200).json({ schema: baseSchema });
+    const result = kv.set(key, { schema: baseSchema, theme: baseTheme });
+    return res.status(200).json(result);
   }
 
   res.status(200).json(layout);

@@ -2,16 +2,19 @@ import { Autocomplete, Group, rem } from '@mantine/core';
 import { IconSearch } from '@tabler/icons-react';
 import classes from './HeaderSearch.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface HeaderSearchProps {
   links: { link: string; label: string }[];
 }
 
 export default function HeaderSearch({ links }: HeaderSearchProps) {
+  const { query } = useRouter()
+  
   const items = links.map((link) => (
     <Link
       key={link.label}
-      href={link.link}
+      href={`/${query.stores}/${link.link}`}
       className={classes.link}
     >
       {link.label}
@@ -22,7 +25,7 @@ export default function HeaderSearch({ links }: HeaderSearchProps) {
     <header className={classes.header}>
       <div className={classes.inner}>
         <Group>
-            Alekito
+            { query.stores }
         </Group>
 
         <Group>

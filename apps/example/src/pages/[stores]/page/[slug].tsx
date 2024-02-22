@@ -13,8 +13,8 @@ export default DynamicPage;
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps(context: GetServerSidePropsContext) {
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL ? `https://${process.env.NEXT_PUBLIC_API_URL}` : 'http://localhost:3000'
-    const response = await fetch(baseUrl + '/api/admin/pages')
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL ? `https://${process.env.NEXT_PUBLIC_API_URL}` : 'http://localhost:3000'
+    const response = await fetch(baseUrl + '/api/admin/pages?store_name=' + context?.params?.stores)
     const data = await response.json()
 
     return {
@@ -23,10 +23,6 @@ export async function getStaticProps(context: GetServerSidePropsContext) {
         theme: data.theme,
         slug: context?.params?.slug,
       },
-      // Next.js will attempt to re-generate the page:
-      // - When a request comes in
-      // - At most once every 10 seconds
-      revalidate: 10, // In seconds
     }
   }
 
