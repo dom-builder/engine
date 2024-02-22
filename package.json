@@ -7,7 +7,7 @@
     "build:example": "nx run example:build",
     "test": "nx test engine",
     "build": "nx build engine",
-    "publish:ci": "npm run build && cd dist/packages/engine && npm publish"
+    "publish:ci": "npm run build && cd dist/packages/engine && npm publish --access=public"
   },
   "devDependencies": {
     "@mantine/core": "7.5.3",
