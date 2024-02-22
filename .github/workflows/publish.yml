@@ -18,7 +18,7 @@ jobs:
         run: npm install
 
       - name: Set npmrc Auth Token
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" >> ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
 
       - name: Publish Core
         run: npm run publish:ci
