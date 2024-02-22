@@ -9,7 +9,7 @@ export default Index;
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: '/page/home',
+      destination: '/404',
       permanent: true,
     }
   }

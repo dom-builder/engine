@@ -1,5 +1,5 @@
 import { resolver } from './containers'
-import { Suspense, useId } from 'react'
+import { Suspense } from 'react'
 
 function builtinKey() {
   return Math.random().toString(36).substring(7)
