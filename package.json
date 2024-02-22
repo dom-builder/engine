@@ -9,7 +9,7 @@
     "build": "nx build engine",
     "publish:ci": "npm run build && cd dist/packages/engine && npm publish --registry https://registry.npmjs.org"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@mantine/core": "7.5.3",
     "@mantine/hooks": "7.5.3",
