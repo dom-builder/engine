@@ -1,4 +1,4 @@
-name: Publish Core on Beta
+name: Publish Engine
 
 on:
   push:
@@ -14,16 +14,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
-
       - name: Install Dependencies
         run: npm install
 
       - name: Set npmrc Auth Token
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" >> ~/.npmrc
 
       - name: Publish Core
         run: npm run publish:ci
