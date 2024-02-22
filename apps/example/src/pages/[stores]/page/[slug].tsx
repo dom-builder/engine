@@ -23,6 +23,7 @@ export async function getStaticProps(context: GetServerSidePropsContext) {
         theme: data.theme,
         slug: context?.params?.slug,
       },
+      revalidate: 1, // In seconds
     }
   }
 
