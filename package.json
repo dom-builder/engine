@@ -5,7 +5,9 @@
   "scripts": {
     "dev:example": "nx run example:dev",
     "build:example": "nx run example:build",
-    "test": "nx test engine"
+    "test": "nx test engine",
+    "build": "nx build engine",
+    "publish:ci": "npm run build && cd dist/packages/engine && npm publish --registry https://registry.npmjs.org"
   },
   "private": true,
   "devDependencies": {

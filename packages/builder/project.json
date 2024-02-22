@@ -11,14 +11,19 @@
         "{options.outputPath}"
       ],
       "options": {
-        "outputPath": "dist/packages/builder",
+        "format": [
+          "esm",
+          "cjs"
+        ],
+        "outputPath": "dist/packages/engine",
         "tsConfig": "packages/builder/tsconfig.lib.json",
         "project": "packages/builder/package.json",
         "entryFile": "packages/builder/src/index.ts",
         "external": [
           "react",
           "react-dom",
-          "react/jsx-runtime"
+          "react/jsx-runtime",
+          "core-js"
         ],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "babel",
