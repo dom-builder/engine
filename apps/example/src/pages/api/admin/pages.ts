@@ -8,39 +8,33 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const normalize = (str: string) => str.toLowerCase().replace(/\s/g, "_");
+  const storeNameQuery = req.query.store_name;
+  const key = normalize(`${storeNameQuery}-schema`);
+
+  if (!storeNameQuery) {
+    return res.status(400).json({ error: "Store name is required" });
+  }
 
   if (req.method === "DELETE") {
-    const storeNameQuery = req.query.store_name;
-
-    if (!storeNameQuery) {
-      return res.status(400).json({ error: "Store name is required" });
-    }
-
-    const key = normalize(`${storeNameQuery}-schema`);
-
     await kv.set(key, { schema: baseSchema, theme: baseTheme });
   }
 
   if (req.method === "POST") {
-    const { schema, theme, store_name } = req.body;
+    const { schema, theme } = req.body;
 
     if (!schema || !theme) {
       return res.status(400).json({ error: "Schema is required" });
     }
-
-    const key = normalize(`${store_name}-schema`);
 
     await kv.set(key, { schema, theme });
 
     return res.status(200).json({ schema, theme });
   }
 
-  const storeNameQuery = req.query.store_name;
-
   if (!storeNameQuery) {
     return res.status(400).json({ error: "Store name is required" });
   }
-  const key = normalize(`${storeNameQuery}-schema`);
+
   const layout = await kv.get(key);
 
   if (layout === null) {
