@@ -89,3 +89,8 @@ register(
   "module-footer",
   React.lazy(() => import("../components/Footer")),
 );
+
+register(
+  "module-table",
+  React.lazy(() => import("../components/Table")),
+);
