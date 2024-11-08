@@ -11,6 +11,10 @@
                             "label": "Home"
                         },
                         {
+                            "link": "/page/about",
+                            "label": "Sobre"
+                        },
+                        {
                             "link": "/page/mango",
                             "label": "Mango"
                         }
@@ -21,7 +25,7 @@
                 "name": "module-hero",
                 "props": {
                     "title": "Bem vindo ao Alekito engine",
-                    "subtitle": "É o davi ?",
+                    "subtitle": "Qualquer coisa",
                     "cta": "Ir para sobre nós"
                 }
             },
